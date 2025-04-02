@@ -10,9 +10,9 @@ const ProductCard = ({ product }) => {
     return (
         <div
             onClick={() => { router.push('/product/' + product._id); scrollTo(0, 0) }}
-            className="flex flex-col items-start gap-0.5 max-w-[200px] w-full cursor-pointer"
+            className="flex flex-col items-start gap-3 max-w-[220px] w-full cursor-pointer bg-white shadow-lg rounded-lg p-4 border border-gray-200 hover:shadow-2xl transition bg-white shadow-md"
         >
-            <div className="cursor-pointer group relative bg-gray-500/10 rounded-lg w-full h-52 flex items-center justify-center">
+            <div className="cursor-pointer group relative rounded-lg w-full h-52 flex items-center justify-center">
                 <Image
                     src={product.image[0]}
                     alt={product.name}
@@ -50,9 +50,9 @@ const ProductCard = ({ product }) => {
             </div>
 
             <div className="flex items-end justify-between w-full mt-1">
-                <p className="text-base font-medium">{currency}{product.offerPrice}</p>
+                <p className="text-base font-medium text-red-500">{product.offerPrice.toLocaleString('vi-VN')}đ</p>
                 <button className=" max-sm:hidden px-4 py-1.5 text-gray-500 border border-gray-500/20 rounded-full text-xs hover:bg-slate-50 transition">
-                    Buy now
+                    Mua ngay
                 </button>
             </div>
         </div>
